@@ -1,4 +1,6 @@
-package com.upwork.test.exception;
+package com.upwork.test.model;
+
+import com.upwork.test.exception.NetworkException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,7 @@ public class Element {
 
     private List<Element> links = new ArrayList<Element>();
 
-    public Element(Integer id) throws NetworkException{
+    public Element(Integer id) throws NetworkException {
         if(id < 0){
             throw new NetworkException();
         }

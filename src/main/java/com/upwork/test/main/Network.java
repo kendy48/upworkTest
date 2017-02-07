@@ -1,12 +1,11 @@
 package com.upwork.test.main;
 
-import com.upwork.test.exception.Element;
+import com.upwork.test.model.Element;
 import com.upwork.test.exception.NetworkException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Created by kendy on 06/02/17.
