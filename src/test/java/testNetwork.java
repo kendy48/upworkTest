@@ -1,4 +1,7 @@
 import com.upwork.test.exception.NetworkException;
+import com.upwork.test.exception.NetworkInitializationException;
+import com.upwork.test.exception.NetworkInvalidValueException;
+import com.upwork.test.exception.NetworkOutOfRangeException;
 import com.upwork.test.main.Network;
 import org.junit.Test;
 
@@ -9,23 +12,23 @@ import static org.junit.Assert.assertEquals;
  */
 public class testNetwork {
 
-    @Test(expected = NetworkException.class)
+    @Test(expected = NetworkInitializationException.class)
     public void createInvalidNetwork1() throws NetworkException{
         new Network(0);
     }
 
-    @Test(expected = NetworkException.class)
+    @Test(expected = NetworkInitializationException.class)
     public void createInvalidNetwork2() throws NetworkException{
         new Network(-1);
     }
 
-    @Test(expected = NetworkException.class)
+    @Test(expected = NetworkOutOfRangeException.class)
     public void createInvalidElement1() throws NetworkException{
         Network network = new Network(5);
         network.connect(1, 8);
     }
 
-    @Test(expected = NetworkException.class)
+    @Test(expected = NetworkInvalidValueException.class)
     public void createInvalidElement2() throws NetworkException{
         Network network = new Network(5);
         network.connect(1, -3);

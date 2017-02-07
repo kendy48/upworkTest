@@ -1,6 +1,7 @@
 package com.upwork.test.model;
 
 import com.upwork.test.exception.NetworkException;
+import com.upwork.test.exception.NetworkInvalidValueException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Element {
 
     public Element(Integer id) throws NetworkException {
         if(id < 0){
-            throw new NetworkException();
+            throw new NetworkInvalidValueException();
         }
         this.id = id;
     }
